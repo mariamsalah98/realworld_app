@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <app-order-list (AddClicked)="viewForm=true"></app-order-list>
+        </div>
+        <div *ngIf="viewDetails" class="col-sm-6">
+            <app-order-detail (EditClicked)="EditMode=true; viewForm=true;"></app-order-detail>
+        </div>
+    </div>
+    <div *ngIf="viewForm" class="row">
+        <div class="col-sm-6">
+            <app-order-form [EditMode]="EditMode" (CancelForm)="viewForm=false; EditMode=false;"></app-order-form>
+        </div>
+    </div>
+</div>

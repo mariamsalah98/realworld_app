@@ -1,0 +1,14 @@
+<button type="button" class="col-sm-4  btn btn-primary btn-block" (click)="AddClicked.emit()">Add Item</button>
+<div class="list-group" *ngFor ="let item of OrderItems">
+    <a  (click)="ItemClicked(item)" class="list-group-item list-group-item-action ">
+        <div class="row">
+            <div class="col-sm-6 ">
+                {{item.name}}
+            </div>
+            <div class="col-sm-6 jsutify-content-center">
+                Total Price : {{item.items*item.price}}
+            </div>
+        </div>
+    </a>
+  </div>
+  
